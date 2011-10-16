@@ -2,7 +2,8 @@
  * Copyright (C) 2010 Archie L. Cobbs. All rights reserved.
  *
  * $Id: AutowiringApplicationServlet.java 19 2010-02-04 18:09:30Z archie $
- * 
+ *
+ * Copyright 2011 Mark Eschbach, licensed under the Apache License, Version 2.0.
  */
 package com.meschbach.vaadin.spring;
 
@@ -145,6 +146,9 @@ public class AutowiringApplicationServlet extends ApplicationServlet {
      */
     @Override
     protected Application getNewApplication(HttpServletRequest request) throws ServletException {
+	/*
+	 * NOTE: Mark Eschbach modified this method to compile against Spring 3.0
+	 */
 	try {
 	    Class<? extends Application> cl = getApplicationClass();
 	    AutowireCapableBeanFactory beanFactory = getAutowireCapableBeanFactory();
