@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.meschbach.vaadin</groupId>
+  <artifactId>spring-support</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>spring-support</name>
+  <url>http://meschbach.com/</url>
+
+  <licenses>
+      <license>
+	  <name>Apache License, Version 2.0</name>
+	  <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+	  <comments>
+	      With the expections listed below, this project is copyright Mark
+	      Eschbach 2011 and is licensed under the Apache License, Version 2.0.
+	      
+		The class "com.meschbach.vaadin.spring.AutowiringApplicationServlet"
+		is based on code by Archie L. Cobbs.  Please see the README file
+		for more information.
+	  </comments>
+      </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>servlet-api</artifactId>
+	    <version>2.5</version>
+	    <scope>provided</scope>
+	</dependency>
+
+	<dependency>
+	    <groupId>com.vaadin</groupId>
+	    <artifactId>vaadin</artifactId>
+	    <version>6.7.0</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>3.0.5.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>3.0.5.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>3.0.5.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>3.0.5.RELEASE</version>
+	</dependency>
+  </dependencies>
+
+    <build>
+	<plugins>
+	    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-compiler-plugin</artifactId>
+		<version>2.0.2</version>
+		<configuration>
+		    <source>1.5</source>
+		    <target>1.5</target>
+		</configuration>
+	    </plugin>
+	</plugins>
+    </build>
+</project>

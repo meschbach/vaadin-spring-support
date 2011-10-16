@@ -1,1 +1,41 @@
-This project contains support for Spring within Vaadin.
+This project contains support for Spring within Vaadin.  Except where noted
+otherwise this project is copyright 2011 by Mark Eschbach under the
+Apache License, Version 2.0.
+
+This project contains the class "com.meschbach.vaadin.spring.AutowiringApplicationServlet",
+derrived from Archie L. Cobbs 2010 class of the name "com.example.AutowiringApplicationServlet"
+licensed under the Apache License, Version 2.0.  This class has been modified to
+fix compilation errors against version 3.0 of Spring and is redistributed under
+Apache License, Version 2.0.  This is published as convinece to the Vaadin
+community until such time as the servlet is included in the core distribution.
+The original source may be found at:
+ * http://dellroad-stuff.googlecode.com/svn-history/r123/trunk/src/java/org/dellroad/stuff/vaadin/WebContextApplicationServlet.java
+ * http://dev.vaadin.com/ticket/4132
+I appreciate his contributions greatly.
+
+Usage of com.meschbach.vaadin.spring.AutowiringApplicationServlet:
+/WEB-INF/web.xml:
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <description>Spring Application Context Controller</description>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <servlet>
+        <description>Vaadin GWT Public Interface</description>
+        <servlet-name>Vaadin GWT Terminal</servlet-name>
+        <servlet-class>com.meschbach.vaadin.spring.AutowiringApplicationServlet</servlet-class>
+        <init-param>
+            <description>Vaadin Framework's Application Class</description>
+            <param-name>application</param-name>
+            <param-value>com.meschbach.xp.vaadin.App</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Vaadin GWT Terminal</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+You need to define your application class within the spring context.
